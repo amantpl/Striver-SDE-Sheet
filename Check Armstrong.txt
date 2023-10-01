@@ -1,0 +1,11 @@
+bool checkArmstrong(int n){
+    int sum=0;
+    string s=to_string(n);
+    int temp=n;
+    while(temp!=0){
+        int lastdigit=temp%10;
+        sum=sum+pow(lastdigit,s.size());
+        temp=temp/10;
+    }
+	return sum==n;
+}
