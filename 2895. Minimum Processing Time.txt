@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int minProcessingTime(vector<int>& processorTime, vector<int>& tasks) {
+        int n=processorTime.size();
+        int m=tasks.size();
+        int largest=INT_MIN;
+        sort(tasks.begin(),tasks.end());
+        sort(processorTime.begin(),processorTime.end());
+        for(int i=0;i<n;i++){
+                if(largest<processorTime[i]+tasks[4*(n-i)-1]){
+                    largest=processorTime[i]+tasks[4*(n-i)-1];
+                }
+        }
+        return largest;
+    }
+};
