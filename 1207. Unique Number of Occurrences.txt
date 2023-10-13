@@ -1,0 +1,34 @@
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        sort(arr.begin(),arr.end());
+        int n=arr.size();
+        int index;
+        int counter2=0;
+        vector<int> occur;
+        vector<bool> ans;
+        for(int i=0;i<n;i++){
+            int counter=0;
+            if(index!=arr[i]){
+                for(int j=0;j<n;j++){
+                if(arr[i]==arr[j]){
+                    counter++;
+                }
+            }
+            occur.push_back(counter);
+            index=arr[i];
+            }
+        }
+        sort(occur.begin(),occur.end());
+        for(int i=0;i<occur.size()-1;i++){
+                if(occur[i]==occur[i+1]){
+                    counter2++;
+                }
+        }
+        if(counter2==0){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+};
