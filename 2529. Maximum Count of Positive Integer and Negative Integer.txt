@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int maximumCount(vector<int>& nums) {
+        int n=nums.size();
+        sort(nums.begin(),nums.end());
+        int counter1=0;
+        int counter2=0;
+        int counter3=0;
+        for(int i=0;i<n;i++){
+            if(nums[i]<0){
+                counter1++;
+            }else if(nums[i]>0){
+                counter2++;
+            }
+        }
+        return max(counter1,counter2);
+    }
+};

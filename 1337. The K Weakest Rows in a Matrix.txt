@@ -1,0 +1,40 @@
+class Solution {
+public:
+    vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
+        vector<int> soldiers;
+        int m=mat.size();
+        int n=mat[0].size();
+        for(int i=0;i<m;i++){
+            int sum=0;
+            for(int j=0;j<n;j++){
+                sum=sum+mat[i][j];
+            }
+            soldiers.push_back(sum);
+        }
+        int s=soldiers.size();
+        vector<int> weak;
+        for(int i=0;i<s;i++){
+            int counter=0;
+            for(int j=0;j<s;j++){
+                if(soldiers[i]<soldiers[j] || (i<j && soldiers[i]==soldiers[j])){
+                    counter++;
+                }
+            }
+            weak.push_back(counter);
+        }
+    vector<int> indices(weak.size());
+    iota(indices.begin(), indices.end(), 0);
+    sort(indices.begin(), indices.end(), [&weak](int a, int b) {
+        return weak[a] > weak[b];
+    });
+    vector<int> res;
+    vector<int> aman;
+    for (int index : indices) {
+        res.push_back(index);
+        }
+        for(int i=0;i<k;i++){
+            aman.push_back(res[i]);
+        }
+        return aman;
+    }
+};

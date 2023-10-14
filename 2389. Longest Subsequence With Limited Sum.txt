@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> answerQueries(vector<int>& nums, vector<int>& queries) {
+        int n=nums.size();
+        vector<int> ans;
+        sort(nums.begin(),nums.end());
+        int m=queries.size();
+        for(int i=0;i<m;i++){
+            int sum=0;
+            int counter=0;
+            for(int j=0;j<n;j++){
+                if(nums[j]<=queries[i]){
+                sum=sum+nums[j];
+                if(sum<=queries[i]){
+                    counter++;
+                }
+                }
+            }
+            ans.push_back(counter);
+        }
+        return ans;
+    }
+};
