@@ -1,0 +1,11 @@
+bool palindrome(int n)
+{
+   int revnum=0;
+   int temp=n;
+     while(temp!=0){
+        int lastdigit=temp%10;
+        revnum=(revnum)*10 + lastdigit;
+        temp=temp/10;
+    }
+    return revnum==n;
+}

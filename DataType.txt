@@ -1,0 +1,9 @@
+int dataTypes(string type) {
+	if(type=="Integer" || type=="Float"){
+        return sizeof(int);    
+    }else if(type=="Double" || type=="Long"){
+        return sizeof(long);
+    }else{
+        return sizeof(char);
+    }
+}

@@ -1,0 +1,11 @@
+void selectionSort(vector<int>&arr) {
+    int N=arr.size();
+    for(int i=0;i<=N-1;i++){
+        int min_index=i;
+        for(int j=i+1;j<=N-1;j++){
+            if(arr[j]<arr[min_index]){
+                swap(arr[j],arr[min_index]);
+            }
+        }
+    }
+}

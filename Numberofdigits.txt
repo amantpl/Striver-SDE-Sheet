@@ -1,0 +1,8 @@
+int countDigits(int n){
+	string s=to_string(n);
+    int counter=0;
+    for(int i=0;i<s.size();i++){
+        counter++;
+    }
+    return counter;
+}
