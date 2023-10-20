@@ -1,0 +1,8 @@
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+        auto maxi=max_element(nums.begin(), nums.end());
+        int index=distance(nums.begin(), maxi);
+        return index;
+    }
+};
